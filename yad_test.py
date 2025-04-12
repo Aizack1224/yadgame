@@ -159,9 +159,13 @@ class App:
                 self.cur+=1
             elif pyxel.btnp(pyxel.KEY_RIGHT):
                 self.cur+=1
+            elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
+                self.cur+=1
             if pyxel.btnp(pyxel.KEY_A):
                 self.cur-=1
             elif pyxel.btnp(pyxel.KEY_LEFT):
+                self.cur-=1
+            elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.cur-=1
             if pyxel.btnp(pyxel.KEY_0):
                 self.cur = 0
@@ -203,9 +207,13 @@ class App:
                 self.now=1
             elif pyxel.btn(pyxel.KEY_RIGHT):
                 self.now=1
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
+                self.now=1
             if pyxel.btn(pyxel.KEY_A):
                 self.now=0
             elif pyxel.btn(pyxel.KEY_LEFT):
+                self.now=0
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.now=0
             
             if self.now == 1:
@@ -213,8 +221,18 @@ class App:
                     if self.frame_count -self.framenow >= 10:
                         self.flag1 = 1
                         self.framenow = self.frame_count
+                elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 1
+                        self.framenow = self.frame_count
             elif self.now ==0:
                 if pyxel.btnp(pyxel.KEY_RETURN):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 3
+                        self.hour = self.cur
+                        self.cur = 0
+                        self.framenow = self.frame_count
+                if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                     if self.frame_count -self.framenow >= 10:
                         self.flag1 = 3
                         self.hour = self.cur
@@ -226,9 +244,13 @@ class App:
                 self.cur+=1
             elif pyxel.btnp(pyxel.KEY_RIGHT):
                 self.cur+=1
+             elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
+                self.cur+=1
             if pyxel.btnp(pyxel.KEY_A):
                 self.cur-=1
             elif pyxel.btnp(pyxel.KEY_LEFT):
+                self.cur-=1
+            elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.cur-=1
 
             if self.cur<=0:
@@ -273,9 +295,13 @@ class App:
                 self.now=1
             elif pyxel.btn(pyxel.KEY_RIGHT):
                 self.now=1
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
+                self.now=1
             if pyxel.btn(pyxel.KEY_A):
                 self.now=0
             elif pyxel.btn(pyxel.KEY_LEFT):
+                self.now=0
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.now=0
             
             if self.now == 1:
@@ -283,8 +309,18 @@ class App:
                     if self.frame_count -self.framenow >= 10:
                         self.flag1 = 3
                         self.framenow = self.frame_count
+                elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 3
+                        self.framenow = self.frame_count
             elif self.now ==0:
                 if pyxel.btnp(pyxel.KEY_RETURN):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 5
+                        self.min = 5+5*self.cur
+                        self.cur = 0
+                        self.framenow = self.frame_count
+                elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                     if self.frame_count -self.framenow >= 10:
                         self.flag1 = 5
                         self.min = 5+5*self.cur
@@ -296,13 +332,21 @@ class App:
                 self.now=1
             elif pyxel.btn(pyxel.KEY_RIGHT):
                 self.now=1
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
+                self.now=1
             if pyxel.btn(pyxel.KEY_A):
                 self.now=0
             elif pyxel.btn(pyxel.KEY_LEFT):
                 self.now=0
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
+                self.now=0
             
             if self.now == 1:
                 if pyxel.btnp(pyxel.KEY_RETURN):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 1
+                        self.framenow = self.frame_count
+                elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                     if self.frame_count -self.framenow >= 10:
                         self.flag1 = 1
                         self.framenow = self.frame_count
@@ -312,15 +356,24 @@ class App:
                         self.flag1 = 6
                         self.cur = 0
                         self.framenow = self.frame_count
+                elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 6
+                        self.cur = 0
+                        self.framenow = self.frame_count
                         
         if self.flag1 ==6:#育成ステータス選択
-            if pyxel.btnp(pyxel.KEY_D):
+           if pyxel.btnp(pyxel.KEY_D):
                 self.cur+=1
             elif pyxel.btnp(pyxel.KEY_RIGHT):
+                self.cur+=1
+             elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
                 self.cur+=1
             if pyxel.btnp(pyxel.KEY_A):
                 self.cur-=1
             elif pyxel.btnp(pyxel.KEY_LEFT):
+                self.cur-=1
+            elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.cur-=1
 
             if self.cur<=0:
@@ -368,9 +421,13 @@ class App:
                 self.now=1
             elif pyxel.btn(pyxel.KEY_RIGHT):
                 self.now=1
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
+                self.now=1
             if pyxel.btn(pyxel.KEY_A):
                 self.now=0
             elif pyxel.btn(pyxel.KEY_LEFT):
+                self.now=0
+            elif pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
                 self.now=0
             
             if self.now == 1:
@@ -378,8 +435,20 @@ class App:
                     if self.frame_count -self.framenow >= 10:
                         self.flag1 = 6
                         self.framenow = self.frame_count
+                elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 6
+                        self.framenow = self.frame_count
             elif self.now ==0:
                 if pyxel.btnp(pyxel.KEY_RETURN):
+                    if self.frame_count -self.framenow >= 10:
+                        self.flag1 = 0
+                        self.yad_now = self.cur
+                        self.timer = 3600*self.min + 216000*self.hour
+                        self.scene = 2
+                        self.framenow = self.frame_count
+                        self.cur = 0
+                elif pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                     if self.frame_count -self.framenow >= 10:
                         self.flag1 = 0
                         self.yad_now = self.cur
@@ -563,7 +632,7 @@ class App:
                     self.hour-=1
                     self.min = -1
             
-            if pyxel.btnp(pyxel.KEY_RETURN):
+            if pyxel.btnp(pyxel.KEY_RETURN)or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                 if self.min > 0:
                     self.flag2 = 1
                 elif self.min ==0:
@@ -623,7 +692,7 @@ class App:
                     
                     self.flag2 = 2
         elif self.flag2 ==1:
-            if pyxel.btnp(pyxel.KEY_RETURN):
+            if pyxel.btnp(pyxel.KEY_RETURN)or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                 
                 self.framenow = self.frame_count
                 self.flag1 = 0
@@ -636,7 +705,7 @@ class App:
                 self.timer_down = 0
                 pyxel.playm(0,loop=True)
         elif self.flag2 ==2:
-            if pyxel.btnp(pyxel.KEY_RETURN):
+            if pyxel.btnp(pyxel.KEY_RETURN)or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
                 
                 self.framenow = self.frame_count
                 self.yad_now_p=0
